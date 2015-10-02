@@ -21,16 +21,18 @@
     Update Kurt Falde 10/17/2014 - Added System.Core Assembly load for older systems
     Update Kurt Falde 10/17/2014 - Added ASR Mitigation (Regex/Matching/Output to CSV)
     Update Kurt Falde 2/18/2015 - Adding logic to check for existing event subscriber and jobs and stop them
+    Creating Version and Guidance to publish on GitHub
+
+    This script makes use of the pseventlogwatcher module which can be obtained from http://pseventlogwatcher.codeplex.com/
 
 #>
-
 
 
 $workingdir = "c:\emet"
 
 cd $workingdir
 
-#The following line was needed on a 2008 R2 setup at one customer It shouldn't hurt having it here however this can be removed in some cases
+#The following line was needed on a 2008 R2 setup in one case
 Add-Type -AssemblyName System.Core
 
 #Following added to unregister any existing EMETWatcher Event in case script has already been ran
