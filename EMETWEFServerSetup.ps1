@@ -18,8 +18,8 @@ wevtutil sl forwardedevents /ms:500000000
 wecutil qc -quiet
 
 #Creating Applocker Subscription from XML files FYI we do delete any existing ones and recreate
-If ((wecutil gs "EMET Events") -ne $NULL) {
-    wecutil ds "EMET Events"
+If ((wecutil gs "EMET Audit Events") -ne $NULL) {
+    wecutil ds "EMET Audit Events"
     wecutil cs .\EMETSubscription.xml
     }
 Else {wecutil cs .\EMETSubscription.xml} 
